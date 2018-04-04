@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件对象</title>
+</head>
+
+<body>
+    <div id="btn">click btn</div>
+</body>
+
+<script>
+    var oBtn = document.getElementById('btn');
+
+    oBtn.onclick = function (event) {
+        alert(event.type)
+    }
+
+    oBtn.addEventListener('click', function (event) {
+        alert(event.type)
+    }, false)
+
+
+    oBtn.onclick = function (event) {
+        alert(event.currentTarget == this);
+        alert(event.target === this);
+    }
+
+
+    document.body.onclick = function (event) {
+        console.log(event.currentTarget === document.body);
+        console.log(this === document.body)
+        console.log(event.target === document.getElementById('btn'));
+
+    }
+
+    // currentTarget: 类型 Boolean  只读  其事件处理程序当前正在处理的那个元素
+</script>
+
+</html>

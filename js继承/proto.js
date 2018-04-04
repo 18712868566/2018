@@ -2,7 +2,7 @@ function SuperType() {
     this.property = true;
 }
 
-SuperType.prototype.getSuperValue = function () {
+SuperType.prototype.getSuperValue = function() {
     return this.property;
 }
 
@@ -13,7 +13,7 @@ function SubType() {
 // 继承SuperType
 SubType.prototype = new SuperType();
 
-SubType.prototype.getSubValue = function () {
+SubType.prototype.getSubValue = function() {
     return this.subproperty;
 }
 
@@ -34,4 +34,3 @@ console.log(instance instanceof SubType)
 console.log(Object.prototype.isPrototypeOf(instance))
 console.log(SuperType.prototype.isPrototypeOf(instance))
 console.log(SubType.prototype.isPrototypeOf(instance))
-

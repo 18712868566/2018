@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EventUtil</title>
+</head>
+
+<body>
+    <a href="http://baidu.com" target="_blank" id="btn">click me</a>
+</body>
+
+<script src="EventUtil.js"></script>
+<script>
+    var btn = document.getElementById('btn');
+
+
+    btn.onclick = function (event) {
+        event = EventUtil.getEvent(event);
+
+        alert(event.type)
+        var target = EventUtil.getTarget(event);
+
+        alert(target.id)
+
+        // 取消默认事件
+        EventUtil.preventDefault(event);
+
+        // 阻止事件冒泡
+        EventUtil.stopPropagetion(event);
+    }
+
+    document.body.onclick = function (event) {
+        alert('body')
+    }
+</script>
+
+</html>

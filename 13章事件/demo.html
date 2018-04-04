@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" onclick="alert('html')">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件流</title>
+</head>
+
+<body onclick="alert('body')">
+    <div id="mydiv">click me</div>
+</body>
+<script>
+    window.onload = function () {
+        var oDiv = document.getElementById('mydiv');
+
+        oDiv.onclick = function (ev) {
+            var ev = ev || window.event;
+            console.log(ev.type)
+            ev.stopPropagation();
+            alert('a')
+
+
+            console.log(this.id)
+        }
+    }
+</script>
+
+</html>
+
+<!-- 
+
+    事件流  ie + Netscape
+
+    事件冒泡
+    事件捕获
+
+ -->

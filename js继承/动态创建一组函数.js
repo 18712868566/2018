@@ -1,8 +1,5 @@
-/* for (var index = 0; index < 10; index++) {
-
-}
-
-console.log(index) */
+/* for (var index = 0; index < 10; index++) {};
+console.log(index); //10  */
 
 
 /* function fn(j) {
@@ -20,11 +17,21 @@ console.log(arr.length)
 console.log(arr[1])
 console.log(arr[0]()) */
 
-var funs;
-for (var i = 0; i < 10; i++) funs[i] = (function (i) { return function () { return i; } })(i);
-for (var h = 0; h < 10; h++) console.log(funs[h]())
+var arr = [];
+
+for (var i = 0; i < 10; i++) {
+    funs[i] = (function(i) {
+        return function() {
+            return i;
+        }
+    })(i);
+}
 
 /*
+for (var i = 0; i < 10; i++) funs[i] = (function(i) { return function() { return i; } })(i);
+for (var h = 0; h < 10; h++) console.log(funs[h]())
+
+
 function f(k) { return function () { return k; } }
 for (var i = 0; i < 10; i++) funs[i] = f(i);
 

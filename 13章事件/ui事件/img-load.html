@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="loading_kz.gif" id="myImage" onload="alert('Image loaded')">
+</body>
+
+<script src="../跨浏览器的事件处理程序/EventUtil.js"></script>
+<script>
+    var image = document.getElementById('myImage');
+    EventUtil.addHandler(image, "load", function (event) {
+        event = EventUtil.getEvent(event);
+        alert(EventUtil.getTarget(event).src)
+    })
+
+    // EventUtil.addHandler(window, "load", function (event) {
+    //     var image = document.createElement("img");
+    //     EventUtil.addHandler(image, "load", function (event) {
+    //         event = EventUtil.getEvent(event);
+    //         alert(EventUtil.getTarget(event).src);
+    //     });
+    //     document.body.appendChild(image);
+    //     image.src = "r2.png"
+    // })
+
+    EventUtil.addHandler(window, "load", function () {
+        var image = new Image();
+
+        EventUtil.addHandler(image, "load", function (event) {
+            alert("Image loaded!")
+        });
+
+        image.src = "r2.png"
+    })
+</script>
+
+</html>

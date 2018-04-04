@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>跨浏览器的事件处理程序</title>
+</head>
+
+<body>
+    <h2>跨浏览器的事件处理程序</h2>
+
+
+
+    <button type="button" id="btn" class="btn btn-large btn-block btn-default">button</button>
+
+</body>
+
+<script src="Event.js"></script>
+
+<script>
+    var oBtn = document.getElementById('btn');
+
+    function fn1() {
+        alert('util add fn')
+    }
+    EventUtil.addHandler(oBtn, 'click', fn1)
+    EventUtil.removeHandler(oBtn, 'click', fn1)
+</script>
+
+</html>

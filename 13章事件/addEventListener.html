@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>addEventListener</title>
+</head>
+
+<body>
+
+    <button id="btn" type="button" class="btn btn-large btn-block btn-default">button</button>
+
+</body>
+
+<script>
+    var oBtn = document.getElementById('btn');
+
+    oBtn.addEventListener('click', function () {
+        alert(this.id);
+    }, false)
+
+    oBtn.addEventListener('click', function () {
+        alert('hello world!')
+    }, false)
+
+    /* 
+        使用 addEventListener 添加的事件 只能 有 removeEventListener 移除
+
+        就是说,向上边的 添加匿名函数 将 无法移除
+
+        他们接受三个参数:
+            1.要处理的事件名
+            2.作为事件处理程序的函数
+            3.一个布尔值  true/false 
+                true: 表示在捕获阶段调用事件处理程序
+                false: 表示在冒泡阶段调用事件处理程序   //推荐
+     */
+
+    //  这种方式 没有用
+    oBtn.removeEventListener('click', function () {
+        alert(this.id)
+    }, false)
+
+
+    // 通过下面的形式,添加和移除 事件
+    function click1() {
+        alert(this.id + 'click1');
+    }
+
+    function click2() {
+        alert('hello world!' + 'click2')
+    }
+
+
+    oBtn.addEventListener('click', click1, false)
+    oBtn.addEventListener('click', click2, false)
+
+    oBtn.removeEventListener('click', click1, false);
+    oBtn.removeEventListener('click', click2, false);
+</script>
+
+</html>

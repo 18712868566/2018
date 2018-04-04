@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ie事件处理</title>
+</head>
+
+<body>
+    <div id="btn">click me</div>
+</body>
+<script>
+    // ie事件处理, ie8及以下版本,只支持事件冒泡
+    // attachEvent()        添加的事件处理程序都会被添加到冒泡阶段
+    // detachEvent()
+    /* 
+        接受两个相同的参数:
+
+            1: 事件处理程序名称
+            2: 事件处理程序函数
+
+     */
+
+    var oBtn = document.getElementById('btn');
+
+    oBtn.attachEvent('onclick', function () { // onclick
+        alert('ie Clicked')
+
+        alert(this === window);
+    })
+
+    oBtn.attachEvent('onclick', function () {
+        alert('sss')
+    })
+    /* 
+        与addEventListener 的 区别
+
+        click 
+        onclick
+
+        使用  attachEvent() 方法的情况下, 事件处理程序会在全局作用域中运行   因此 this 等于 window
+
+        添加多个事件事, 执行顺序,和 addEventListener() 的顺序相反
+     */
+
+    //  移除相应的事件处理程序
+    function addFn() {
+        alert(' add fn')
+    }
+
+
+    oBtn.attachEvent('onclick', addFn) // 添加
+    oBtn.detachEvent('onclick', addFn) // 移除
+</script>
+
+</html>

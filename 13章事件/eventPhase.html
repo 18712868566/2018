@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="http://www.baidu.com" id="btn">clime me</a>
+</body>
+
+<script>
+    var btn = document.getElementById('btn');
+
+    btn.onclick = function (event) {
+        alert(event.eventPhase)
+        event.preventDefault();
+        // alert('aa')
+    }
+
+    document.body.addEventListener('click', function (event) {
+        alert(event.eventPhase);
+    }, true);
+
+    document.body.onclick = function (event) {
+        alert(event.eventPhase)
+        // alert('body')
+    }
+</script>
+<!-- 
+    事件对象的 eventPhase 属性, 可以用来确定事件当前正位于事件流 的那个阶段
+
+    如果在捕获阶段调用的事件处理程序: eventPhase =  1
+    如果事件处理程序处于目标对象上: eventPhase = 2
+    如果实在冒泡阶段调用事件处理程序  eventPhase = 3
+
+    
+    只有在事件处理程序执行期间
+    event对象才会存在
+    一但事件处理程序执行完毕,
+    event对象就会被销毁
+ -->
+
+</html>

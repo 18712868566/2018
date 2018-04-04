@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="http://www.baidu.com" id="btn">clime me</a>
+</body>
+
+<script>
+    // ie事件对象
+    var btn = document.getElementById('btn');
+
+    btn.onclick = function (event) {
+        var event = window.event; //dom事件对象 和 ie事件对象 ie的事件对象作为  window对象的一个属性存在
+        alert(event.type)
+        // event.preventDefault(); //dom事件对象取消默认事件
+        event.returnValue = false; // ie事件对象取消默认事件 默认值为 true (false 为取消默认事件)
+
+        alert(window.event.srcElement === this);
+    }
+
+    btn.attachEvent('onclick', function (event) {
+        alert(event.srcElement === this)
+    })
+</script>
+
+
+<!-- 
+
+    ie event 事件对象
+
+        cancelBubble        默认是 false , 设置为true 就可以取消事件冒泡
+
+        returnValue         默认是 true ,  设置为false 就可以取消事件的默认行为  与(dom中 的 preventDefault()方法作用相同)
+
+        srcElement          事件目标(与dom中的target属性相同)
+
+        type                被触发的事件类型
+
+ -->
+
+</html>
