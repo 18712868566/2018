@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>path</title>
+</head>
+
+<body>
+    <h2>写在前面--个属性和参数说明</h2>
+    <pre>
+        path 元素用于定义一个路径。
+        下面的命令可用于路径数据：
+
+        M = moveto
+        L = lineto
+        H = horizontal lineto  水平线
+        V = vertical lineto  垂直线
+        C = curveto
+        S = smooth curveto 光滑的曲线
+        Q = quadratic Bézier curve 二次贝塞尔曲线
+        T = smooth quadratic Bézier curveto 平滑二次Bézier曲线
+        A = elliptical Arc   椭圆弧
+        Z = closepath   闭合路径
+
+        注意：以上所有命令均允许小写字母。大写表示绝对定位，小写表示相对定位。
+
+    </pre>
+    <svg width="100%" height="500">
+        <path d="M150 0, L75 200, L225 200, Z"></path>
+    </svg>
+
+    <svg width="100%" height="500">
+        <path id="lineAB" d="M 100 350 l 150 -300" stroke="red" stroke-width="3" fill="none" />
+        <path id="lineBC" d="M 250 50 l 150 300" stroke="red" stroke-width="3" fill="none" />
+        <path d="M 175 200 l 150 0" stroke="green" stroke-width="3" fill="none" />
+        <path d="M 100 350 q 150 -300 300 0" stroke="blue"stroke-width="5" fill="none" />
+
+        <!-- Mark relevant points -->
+        <g stroke="black" stroke-width="3" fill="black">
+            <circle id="pointA" cx="100" cy="350" r="3" />
+            <circle id="pointB" cx="250" cy="50" r="3" />
+            <circle id="pointC" cx="400" cy="350" r="3" />
+        </g>
+
+        <!-- Label the points -->
+        <g font-size="30" font="sans-serif" fill="black" stroke="none" text-anchor="middle">
+            <text x="100" y="350" dx="-30">A</text>
+            <text x="250" y="50" dy="-10">B</text>
+            <text x="400" y="350" dx="30">C</text>
+        </g>
+    </svg>
+    <pre>
+        复杂吗？是的！！由于在绘制路径时的复杂性，强烈建议使用SVG编辑器来创建复杂的图形。
+    </pre>
+</body>
+
+</html>
