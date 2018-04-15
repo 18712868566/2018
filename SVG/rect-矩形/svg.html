@@ -13,12 +13,12 @@
             width: 100%;
             background: #e9e9e9;
         }
-        
+
         body {
             margin: 0;
             text-align: center;
         }
-        
+
         .grid {
             width: 750px;
             height: 500px;
@@ -28,7 +28,7 @@
             background-image: url('grid.png');
             position: relative;
         }
-        
+
         .grid::before {
             content: "";
             border-left: 1px solid #7c7cea;
@@ -38,7 +38,7 @@
             width: 750px;
             height: 600px;
         }
-        
+
         .grid::after {
             content: "";
             border-top: 1px solid #7c7cea;
@@ -48,7 +48,7 @@
             width: 850px;
             height: 500px;
         }
-        
+
         svg {
             stroke: #00C5CD;
             stroke-width: 5;
@@ -63,7 +63,7 @@
 <body>
 
     <div class="grid">
-        <svg width="750" height="500">
+        <svg width="750" height="500" viewBox="0 0 1920 1920">
             <!-- defs 包裹 这样做会告诉系统，目前我们完成的所有图标在我们明确地去使用它们之前默认都是隐藏的。 -->
             <defs>
                 <!-- 用 <g> 创建组合对象 制定唯一ID -->
@@ -73,18 +73,18 @@
                     <line x1='3' y1='35' x2='48' y2 = '35'></line>
                     <line x1='3' y1='51' x2='65' y2 = '51'></line>
                 </g>
-                
+
                 <!-- 画一个折线 -->
                 <g id="rightcaret">
                     <polyline points="3 3, 30 28, 3 53,30 78,3 103"></polyline>
-                </g> 
+                </g>
                 <!-- 画一个浏览器器 -->
                 <g id="browser">
-                    <rect x='3' y='3' width='80' height='60'></rect>    
+                    <rect x='3' y='3' width='80' height='60'></rect>
                     <line x1='3' y1='19' x2='80' y2='19'></line>
                     <line x1='25' y1='3' x2='25' y2='16'></line>
                 </g>
-                
+
                 <!-- 画一个警告 -->
                 <symbol id="alert" viewBox=''0 0 86 86>
                     <ellipse cx='43' cy='43' rx='40' ry='40'></ellipse>
@@ -98,20 +98,20 @@
                     <ellipse cx='43' cy='43' rx='40' ry='40'></ellipse>
                     <polygon points='35 23, 60 43, 35 63'/>
                     <!-- <polygon points='35 23, 60 43, 35 63,80 90'/> -->
-                </symbol>    
-                    
+                </symbol>
+
                 <!-- 画一个下载箭头 -->
                 <symbol id="download" viewBox='0 0 70 100'>
-                    <path d='M 25 3, 
-                    L 45 3, 
-                    L 45 50, 
-                    L 70 50, 
-                    L 35 90, 
-                    L 0 50, 
+                    <path d='M 25 3,
+                    L 45 3,
+                    L 45 50,
+                    L 70 50,
+                    L 35 90,
+                    L 0 50,
                     L 25 50
                     Z'></path>
                 </symbol>
-                
+
             </defs>
 
             <!-- 为了使用它们，我们需要做的就是添加一个 <use> 元素（确保在 <defs> 元素以外且之后的地方添加它），并设置一个 href 属性指向想要的那个图标的 ID。 -->
