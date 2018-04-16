@@ -10,7 +10,7 @@ function SuperType(name) {
 }
 
 
-SuperType.prototype.sayName = function () {
+SuperType.prototype.sayName = function() {
     console.log(this.name);
 }
 
@@ -20,10 +20,10 @@ function SubType(name, age) {
     this.age = age;
 }
 
-SubType.prototype = new SuperType();    //第一次调用 SuperType()
+SubType.prototype = new SuperType(); //第一次调用 SuperType()
 SubType.prototype.constructor = SubType;
 
-SubType.prototype.sayAge = function () {
+SubType.prototype.sayAge = function() {
     console.log(this.age)
 }
 
