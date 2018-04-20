@@ -19,3 +19,23 @@ $bg-color:orange;
 .btn {
     display: block;
 }
+
+.icon-1,
+.icon-2,
+.icon-3,
+.icon-4,
+.icon-5,
+.icon-6,
+.icon-7 {
+    width: 551px;
+    height: 713px;
+}
+
+.box-radius {
+    width: 200px;
+    height: 200px;
+    background: blueviolet;
+    border-radius: 50px;
+    transform: rotate(45deg);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .2);
+}
